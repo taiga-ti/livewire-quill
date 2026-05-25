@@ -70,13 +70,13 @@ class LivewireQuill extends Component
     public function render()
     {
         if (! $this->rendered) {
-            $this->dispatch('livewire-quill:init', [
-                'quillId' => $this->quillId,
-                'data' => $this->data,
-                'placeholder' => $this->placeholder,
-                'classes' => $this->classes,
-                'toolbar' => $this->toolbar,
-            ]);
+            $this->dispatch('livewire-quill:init',
+                quillId: $this->quillId,
+                data: $this->data,
+                placeholder: $this->placeholder,
+                classes: $this->classes,
+                toolbar: $this->toolbar,
+            );
         }
 
         $this->rendered = true;

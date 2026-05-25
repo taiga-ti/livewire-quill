@@ -130,12 +130,20 @@
         }
 
         document.addEventListener('livewire-quill:init', (event) => {
-            var event = event.detail[0];
+            // With named dispatch parameters, event.detail contains the data directly
+            // as an object in both Livewire 3 and Livewire 4
+            let data = event.detail;
 
-            var quillContainer = document.getElementById(event.quillId);
+            // Livewire 3 with positional array dispatch wraps in event.detail[0]
+            // (backward compat for cached views during upgrade)
+            if (Array.isArray(data)) {
+                data = data[0];
+            }
 
-            if (!quillContainer.dataset.initialized) {
-                initQuill(event.quillId, event.data, event.placeholder, event.toolbar);
+            let quillContainer = document.getElementById(data.quillId);
+
+            if (quillContainer && !quillContainer.dataset.initialized) {
+                initQuill(data.quillId, data.data, data.placeholder, data.toolbar);
                 quillContainer.dataset.initialized = true;
             }
         });

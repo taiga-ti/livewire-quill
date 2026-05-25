@@ -1,5 +1,5 @@
 {
-  "name": "joelwmale/livewire-quill",
+  "name": "taiga-ti/livewire-quill",
   "version": "6.0.0",
   "description": "Easily add QuillJS with image support to any Laravel Livewire component.",
   "keywords": [
@@ -7,7 +7,7 @@
     "laravel",
     "livewire-quill"
   ],
-  "homepage": "https://github.com/joelwmale/livewire-quill",
+  "homepage": "https://github.com/taiga-ti/livewire-quill",
   "license": "MIT",
   "authors": [
     {
